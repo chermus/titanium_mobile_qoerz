@@ -108,7 +108,7 @@ public class TiMapView extends TiUIView
 		private boolean requestViewOnScreen = false;
 		private View view;
 		//Long click related variables
-		private static final int MIN_MILLISECONDS_FOR_LONG_CLICK = 800;
+		private static final int MIN_MILLISECONDS_FOR_LONG_CLICK = 200;
 		private static final float X_TOLERANCE=10;//x pixels that your finger can be off but still constitute a long press
 		private static final float Y_TOLERANCE=10;//y pixels that your finger can be off but still constitute a long press
 
@@ -157,8 +157,6 @@ public class TiMapView extends TiUIView
 						}
 					}
 
-				} else if (actionType == MotionEvent.ACTION_UP) {
-					// determine if this was a long click:
 					long eventTime = ev.getEventTime();
 					long downTime = ev.getDownTime();// This should match longClickStartTime unless we reset it earlier
 					if (longClickStartTime == downTime) {
